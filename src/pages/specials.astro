@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Specials - Flamingo"
+  description="Special offers, volume discounts, and promotional savings on Flamingo Bathroom Tissue products."
+>
+  <div class="container page-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="breadcrumb-separator">/</li>
+      <li class="breadcrumb-current" aria-current="page">Special Offers</li>
+    </nav>
+
+    <div class="specials-hero">
+      <h1 class="page-title">Special Offers</h1>
+      
+      <div class="original-notice-box">
+        <p class="notice-text">There are no special offer products to list.</p>
+      </div>
+
+      <div class="specials-promo-card">
+        <h2>Wholesale Volume Discounts Available</h2>
+        <p>
+          While we do not currently have retail clearance items listed, our wholesale and commercial clients enjoy ongoing tiered volume discounts on full pallet and multi-pallet orders.
+        </p>
+
+        <div class="discount-tiers">
+          <div class="tier-item">
+            <span class="tier-qty">5+ Pallets</span>
+            <span class="tier-benefit">Tier 1 Freight Subsidy</span>
+          </div>
+          <div class="tier-item">
+            <span class="tier-qty">10+ Pallets</span>
+            <span class="tier-benefit">Volume Case Pricing</span>
+          </div>
+          <div class="tier-item">
+            <span class="tier-qty">Full Truckload (FTL)</span>
+            <span class="tier-benefit">Maximum Direct Manufacturer Discount</span>
+          </div>
+        </div>
+
+        <div class="specials-cta">
+          <p>Contact our sales department for current promotional pricing:</p>
+          <a href="mailto:support@flamingotissue.com?subject=Special%20Offers%20Inquiry" class="btn btn-primary">
+            Inquire About Current Specials: support@flamingotissue.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .specials-hero {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .original-notice-box {
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .notice-text {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+  }
+
+  .specials-promo-card {
+    background: #fafafa;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: var(--radius-sm);
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .specials-promo-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+  }
+
+  .specials-promo-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto 2rem;
+  }
+
+  .discount-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tier-item {
+    background: #ffffff;
+    border: 1px solid rgba(194,0,108,0.2);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tier-qty {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-dark-pink);
+  }
+
+  .tier-benefit {
+    font-size: 0.9rem;
+    color: #4b5563;
+    font-weight: 500;
+  }
+
+  .specials-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .discount-tiers {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

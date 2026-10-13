@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Delivery Information - Flamingo"
+  description="Flamingo Paper Products shipping policies, freight transit times, commercial pallet delivery, and logistics support."
+>
+  <div class="container page-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="breadcrumb-separator">/</li>
+      <li class="breadcrumb-current" aria-current="page">Delivery Information</li>
+    </nav>
+
+    <article class="content-article">
+      <h1 class="page-title">Delivery Information</h1>
+      <p class="lead-text">
+        Flamingo Paper Products, Inc. coordinates commercial parcel, LTL freight, and full truckload shipments across the United States and Canada from our facilities in City of Industry, California.
+      </p>
+
+      <div class="delivery-cards-grid">
+        <div class="delivery-card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <h3>Standard Commercial Freight</h3>
+          <p>Standard delivery is coordinated via licensed commercial freight carriers. Standard transit times range from 2 to 6 business days depending on destination zone from California.</p>
+        </div>
+
+        <div class="delivery-card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <h3>Pallet &amp; Bulk Shipping</h3>
+          <p>Orders of 1 to 26 pallets are shrink-wrapped and corner-protected on standard 40" x 48" GMA grade pallets. Full truckloads (FTL) receive expedited route dispatch.</p>
+        </div>
+
+        <div class="delivery-card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+          </div>
+          <h3>Delivery Appointments</h3>
+          <p>Commercial docks require receiving window verification. Liftgate delivery and inside delivery services can be arranged during order confirmation upon request.</p>
+        </div>
+      </div>
+
+      <section class="policy-section">
+        <h2>Order Processing &amp; Dispatch</h2>
+        <p>
+          Wholesale purchase orders are reviewed and processed within 1-2 business days. Once an order is scheduled for dispatch, a confirmation containing carrier pro numbers, bill of lading (BOL), and tracking information will be issued via email.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Receiving &amp; Inspection Procedures</h2>
+        <p>
+          Please thoroughly inspect all cartons and pallets upon arrival prior to signing the delivery receipt or bill of lading. Any visible shipping damage or carton count discrepancy must be clearly noted on the driver's delivery receipt before signing.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Delivery Questions &amp; Support</h2>
+        <p>
+          For tracking inquiries, delivery status updates, or freight quote requests, please contact our logistics support team:
+        </p>
+        <div class="support-contact-box">
+          <p><strong>Customer Support &amp; Logistics:</strong> <a href="mailto:support@flamingotissue.com">support@flamingotissue.com</a></p>
+          <p><strong>Dispatch Telephone:</strong> <a href="tel:888-580-8091">888-580-8091</a></p>
+          <p><strong>Facility Address:</strong> 15117 Salt Lake Avenue, City of Industry, CA 91746</p>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .content-article {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 3rem;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 2.5rem;
+  }
+
+  .delivery-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .delivery-card {
+    background-color: #fafafa;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: var(--radius-sm);
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+  }
+
+  .card-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: var(--primary-light-pink);
+    color: var(--primary-dark-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+  }
+
+  .delivery-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+  }
+
+  .delivery-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .policy-section {
+    margin-bottom: 2rem;
+  }
+
+  .policy-section h2 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .policy-section p {
+    font-size: 0.96rem;
+    line-height: 1.75;
+    color: #4b5563;
+  }
+
+  .support-contact-box {
+    background-color: var(--primary-light-pink);
+    border: 1px solid rgba(194,0,108,0.2);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .support-contact-box a {
+    color: var(--primary-dark-pink);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 800px) {
+    .delivery-cards-grid {
+      grid-template-columns: 1fr;
+    }
+    .content-article {
+      padding: 1.5rem;
+    }
+  }
+</style>

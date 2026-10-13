@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Gift Certificates - Flamingo"
+  description="Flamingo Tissue corporate and institutional gift vouchers, volume gift certificates, and corporate rewards."
+>
+  <div class="container page-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="breadcrumb-separator">/</li>
+      <li class="breadcrumb-current" aria-current="page">Gift Certificates</li>
+    </nav>
+
+    <article class="content-article">
+      <h1 class="page-title">Gift Certificates</h1>
+      <p class="lead-text">
+        Flamingo Paper Products offers corporate purchase vouchers and commercial credit certificates for institutional purchasing and distributor partner accounts.
+      </p>
+
+      <div class="info-card">
+        <h2>Commercial Vouchers &amp; Credits</h2>
+        <p>
+          Corporate clients and educational/hospitality partners may purchase prepaid credit vouchers for scheduled deliveries. Gift certificates are non-refundable and redeemable directly against wholesale invoices.
+        </p>
+
+        <div class="voucher-action-box">
+          <h3>Inquire or Order Corporate Vouchers</h3>
+          <p>Contact our accounts department to issue or redeem custom gift vouchers:</p>
+          <a href="mailto:support@flamingotissue.com?subject=Gift%20Certificate%20Inquiry" class="btn btn-primary">
+            Email Support: support@flamingotissue.com
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .content-article {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 3rem;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 2rem;
+  }
+
+  .info-card {
+    background-color: #fafafa;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: var(--radius-sm);
+    padding: 2rem;
+  }
+
+  .info-card h2 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-card p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .voucher-action-box {
+    background: #ffffff;
+    border: 1px solid rgba(194,0,108,0.2);
+    border-radius: var(--radius-sm);
+    padding: 1.75rem;
+    text-align: center;
+  }
+
+  .voucher-action-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .voucher-action-box p {
+    margin-bottom: 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .content-article {
+      padding: 1.5rem;
+    }
+  }
+</style>

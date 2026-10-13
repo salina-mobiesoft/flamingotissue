@@ -1,0 +1,186 @@
+---
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-main">
+    <div class="footer-columns">
+      <!-- Column 1: Information -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Information</h3>
+        <ul class="footer-list">
+          <li><a href="/faqs" class="footer-link">FAQs</a></li>
+          <li><a href="/legal-agg" class="footer-link">Legal Agreement</a></li>
+          <li><a href="/about" class="footer-link">About Flamingo</a></li>
+          <li><a href="/mgt" class="footer-link">Management</a></li>
+          <li><a href="/delivery-info" class="footer-link">Delivery Information</a></li>
+          <li><a href="/priv-pol" class="footer-link">Privacy Policy</a></li>
+          <li><a href="/terms-conditions" class="footer-link">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Customer Service -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Customer Service</h3>
+        <ul class="footer-list">
+          <li><a href="/contact-us" class="footer-link">Contact Us</a></li>
+          <li><a href="mailto:support@flamingotissue.com" class="footer-link email-direct">support@flamingotissue.com</a></li>
+          <li><a href="/returns" class="footer-link">Returns</a></li>
+          <li><a href="/sitemap" class="footer-link">Site Map</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Extras -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Extras</h3>
+        <ul class="footer-list">
+          <li><a href="/gift-certificates" class="footer-link">Gift Certificates</a></li>
+          <li><a href="/affiliates" class="footer-link">Affiliates</a></li>
+          <li><a href="/specials" class="footer-link">Specials</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: My Account -->
+      <div class="footer-column">
+        <h3 class="footer-heading">My Account</h3>
+        <ul class="footer-list">
+          <li><a href="/account" class="footer-link">My Account</a></li>
+          <li><a href="/account#orders" class="footer-link">Order History</a></li>
+          <li><a href="/account#wishlist" class="footer-link">Wish List</a></li>
+          <li><a href="/account#newsletter" class="footer-link">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container bottom-content">
+      <div class="bottom-border-line"></div>
+      <div class="bottom-text-wrapper">
+        <p class="copyright-text">
+          Copyright &copy; 1965 - 2017 Flamingo Paper Products, Inc. All Rights Reserved.
+        </p>
+        <p class="support-text">
+          Customer Support: <a href="mailto:support@flamingotissue.com">support@flamingotissue.com</a> &bull; Phone: <a href="tel:888-580-8091">888-580-8091</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    width: 100%;
+    background-color: var(--primary-pink);
+    color: #ffffff;
+    margin-top: auto;
+  }
+
+  .footer-main {
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-heading {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  }
+
+  .footer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-link {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.95;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .footer-link:hover {
+    opacity: 1;
+    transform: translateX(4px);
+    text-decoration: underline;
+  }
+
+  .email-direct {
+    word-break: break-all;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .footer-bottom {
+    background-color: rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 0;
+  }
+
+  .bottom-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bottom-border-line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .bottom-text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .bottom-text-wrapper a {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .bottom-text-wrapper a:hover {
+    color: #ffe6f6;
+  }
+
+  @media (max-width: 991px) {
+    .footer-columns {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .footer-columns {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    .bottom-text-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

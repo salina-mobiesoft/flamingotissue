@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { products } from '../data/products';
+---
+
+<Layout
+  title="Site Map - Flamingo"
+  description="Comprehensive sitemap and directory of all pages, products, and customer resources on FlamingoTissue.com."
+>
+  <div class="container page-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="breadcrumb-separator">/</li>
+      <li class="breadcrumb-current" aria-current="page">Site Map</li>
+    </nav>
+
+    <div class="sitemap-hero">
+      <h1 class="page-title">Site Map</h1>
+      <p class="lead-text">
+        Browse the complete directory of Flamingo Tissue web pages, product catalogs, institutional policies, and customer support resources.
+      </p>
+    </div>
+
+    <div class="sitemap-grid">
+      <!-- Section 1: Main Pages -->
+      <div class="sitemap-card">
+        <h2>Main Pages</h2>
+        <ul class="sitemap-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Flamingo</a></li>
+          <li><a href="/wholesale">Wholesale &amp; Distribution</a></li>
+          <li><a href="/mgt">Management &amp; Leadership</a></li>
+          <li><a href="/faqs">Frequently Asked Questions (FAQ)</a></li>
+          <li><a href="/products">Products Catalog</a></li>
+          <li><a href="/contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 2: Products -->
+      <div class="sitemap-card">
+        <h2>Products &amp; Roll Types</h2>
+        <ul class="sitemap-links">
+          {products.map((p) => (
+            <li>
+              <a href={`/products#${p.id}`}>
+                {p.name} ({p.sheets})
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Section 3: Legal & Information -->
+      <div class="sitemap-card">
+        <h2>Information &amp; Policies</h2>
+        <ul class="sitemap-links">
+          <li><a href="/faqs">FAQs</a></li>
+          <li><a href="/legal-agg">Legal Agreement</a></li>
+          <li><a href="/about">About Flamingo</a></li>
+          <li><a href="/mgt">Management</a></li>
+          <li><a href="/delivery-info">Delivery Information</a></li>
+          <li><a href="/priv-pol">Privacy Policy</a></li>
+          <li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 4: Customer Service & Extras -->
+      <div class="sitemap-card">
+        <h2>Customer Service &amp; Extras</h2>
+        <ul class="sitemap-links">
+          <li><a href="/contact-us">Contact Customer Service</a></li>
+          <li><a href="/returns">Returns &amp; RMA Requests</a></li>
+          <li><a href="/sitemap">Site Map</a></li>
+          <li><a href="/gift-certificates">Gift Certificates</a></li>
+          <li><a href="/affiliates">Affiliate Program</a></li>
+          <li><a href="/specials">Special Offers &amp; Volume Discounts</a></li>
+          <li><a href="/account">My Account Portal</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .sitemap-hero {
+    margin-bottom: 3rem;
+  }
+
+  .sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .sitemap-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 2.25rem;
+  }
+
+  .sitemap-card h2 {
+    font-size: 1.35rem;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-pink);
+  }
+
+  .sitemap-links {
+    list-style: disc;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .sitemap-links li a {
+    color: #374151;
+    font-size: 0.98rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .sitemap-links li a:hover {
+    color: var(--primary-dark-pink);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .sitemap-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

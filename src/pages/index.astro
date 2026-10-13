@@ -1,0 +1,316 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products } from '../data/products';
+
+const featuredProducts = products.filter(p => p.featured);
+---
+
+<Layout
+  title="Flamingo - Premium Bathroom Tissue & Paper Products"
+  description="For nearly 50 years, Flamingo Paper Products have designed and manufactured the best bathroom tissue on the market. Doubled layered, soft, strong, and highly absorbent."
+>
+  <!-- Hero Carousel Slider -->
+  <HeroSlider />
+
+  <!-- Intro / Lead Statement -->
+  <section class="intro-section" aria-labelledby="intro-heading">
+    <div class="container">
+      <div class="intro-box">
+        <h1 id="intro-heading" class="sr-only">About Flamingo Paper Products</h1>
+        <p class="intro-text">
+          For nearly 50 years, Flamingo Paper Products have designed and manufactured the best bathroom tissue on the market. Doubled layered, soft, strong, and highly absorbent, Flamingo Bathroom Tissue is a technologically advanced premium brand. We are committed to producing the highest quality bathroom tissue at the greatest value.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="products-section" aria-labelledby="featured-products-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="featured-products-heading" class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Our signature Double-Ply Super and Plus roll collections</p>
+      </div>
+
+      <div class="products-grid">
+        {featuredProducts.map((product) => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+
+      <div class="view-all-wrapper">
+        <a href="/products" class="btn btn-primary btn-lg">
+          View All Products &amp; Specs
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Flamingo Highlights -->
+  <section class="features-section" aria-labelledby="features-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="features-heading" class="section-title">The Flamingo Difference</h2>
+        <p class="section-subtitle">Engineered for comfort, strength, and environmental responsibility</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Double-Ply Strength</h3>
+          <p>Two layers of premium embossed tissue combine luxurious softness with exceptional strength and absorbency.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h3>Septic &amp; Sewer Safe</h3>
+          <p>Dissolves rapidly in water, making all Flamingo products 100% safe for standard residential septic and municipal sewer systems.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <h3>More Sheets, Greater Value</h3>
+          <p>Flamingo Super Rolls feature 750 sheets (50% more sheets), while Plus Rolls offer 550 sheets (10% more sheets than competitors).</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3>Nearly 50 Years Of Trust</h3>
+          <p>Manufactured by Flamingo Paper Products, Inc. since 1965, serving retail, commercial, and wholesale distribution partners nationwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wholesale Call To Action -->
+  <section class="wholesale-cta-section" aria-labelledby="wholesale-cta-heading">
+    <div class="container cta-container">
+      <div class="cta-content">
+        <h2 id="wholesale-cta-heading" class="cta-title">Wholesale &amp; Commercial Distribution</h2>
+        <p class="cta-text">
+          Looking for pallet shipments, private labeling, or bulk wholesale supply for hotels, distributors, or retailers? Contact our sales team today for customized pricing and logistics.
+        </p>
+        <div class="cta-actions">
+          <a href="/wholesale" class="btn btn-white">
+            Wholesale Information
+          </a>
+          <a href="mailto:support@flamingotissue.com?subject=Wholesale%20Inquiry" class="btn btn-outline-white">
+            Email Wholesale Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Intro Section */
+  .intro-section {
+    padding: 2.5rem 0 1.5rem;
+  }
+
+  .intro-box {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+    background: #ffffff;
+  }
+
+  .intro-text {
+    font-size: 1.22rem;
+    line-height: 1.8;
+    color: #333333;
+    font-weight: 400;
+  }
+
+  /* Products Section */
+  .products-section {
+    padding: 3rem 0;
+    background-color: var(--bg-alt);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .view-all-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .btn-lg {
+    padding: 0.9rem 2.25rem;
+    font-size: 1.1rem;
+  }
+
+  /* Features Section */
+  .features-section {
+    padding: 4.5rem 0;
+    background-color: #ffffff;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .feature-card {
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(0,0,0,0.08);
+    background: #ffffff;
+    transition: all 0.2s ease;
+  }
+
+  .feature-card:hover {
+    border-color: var(--primary-pink);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .feature-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-light-pink);
+    color: var(--primary-dark-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+  }
+
+  .feature-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* Wholesale CTA */
+  .wholesale-cta-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-dark-pink) 100%);
+    color: #ffffff;
+  }
+
+  .cta-container {
+    text-align: center;
+  }
+
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cta-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+  }
+
+  .btn-outline-white:hover {
+    background: #ffffff;
+    color: var(--primary-dark-pink);
+  }
+
+  @media (max-width: 1200px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    .intro-text {
+      font-size: 1.05rem;
+    }
+    .cta-title {
+      font-size: 1.75rem;
+    }
+  }
+</style>

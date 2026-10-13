@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About Flamingo - Flamingo Paper Products, Inc."
+  description="For nearly 50 years, Flamingo Paper Products have designed and manufactured the best bathroom tissue on the market. Doubled layered, soft, strong, and highly absorbent."
+>
+  <div class="container page-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="breadcrumb-separator">/</li>
+      <li class="breadcrumb-current" aria-current="page">About Flamingo</li>
+    </nav>
+
+    <div class="about-hero-section">
+      <div class="about-text-content">
+        <h1 class="page-title">About Flamingo</h1>
+        <p class="lead-paragraph">
+          For nearly 50 years, Flamingo Paper Products have designed and manufactured the best bathroom tissue on the market. Doubled layered, soft, strong, and highly absorbent, Flamingo Bathroom Tissue is a technologically advanced premium brand. We are committed to producing the highest quality bathroom tissue at the greatest value.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <span class="highlight-stat">1965</span>
+            <span class="highlight-label">Year Founded</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-stat">50+</span>
+            <span class="highlight-label">Years of Manufacturing</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-stat">100%</span>
+            <span class="highlight-label">Septic &amp; Sewer Safe</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-stat">2-Ply</span>
+            <span class="highlight-label">Double Layered Quality</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-image-wrapper">
+        <img
+          src="/flamingo-manufacturing-1500w.jpg"
+          alt="Flamingo Paper Products Manufacturing Facility"
+          width="1500"
+          height="800"
+          class="about-img"
+          loading="eager"
+        />
+        <p class="image-caption">Flamingo Paper Products, Inc. State-of-the-Art Production Facility</p>
+      </div>
+    </div>
+
+    <!-- Company Story & Principles -->
+    <div class="about-details-grid">
+      <div class="details-card">
+        <h2>Our Commitment to Quality</h2>
+        <p>
+          At Flamingo Paper Products, our philosophy is simple: never compromise on comfort or durability. Every roll of Flamingo Bathroom Tissue undergoes strict quality testing to ensure unmatched softness without sacrificing essential tensile strength.
+        </p>
+      </div>
+
+      <div class="details-card">
+        <h2>Eco-Advanced Technology</h2>
+        <p>
+          We employ technologically and ecologically advanced processing methods to create tissue that dissolves quickly and safely. Safe for all residential septic tanks, recreational vehicles, boats, and municipal systems.
+        </p>
+      </div>
+
+      <div class="details-card">
+        <h2>American Heritage &amp; Value</h2>
+        <p>
+          Headquartered in the City of Industry, California, Flamingo Tissue provides families and commercial institutions with bulk and packaged tissue solutions that offer 10% to 50% more sheets per roll than leading supermarket brands.
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-cta-box">
+      <h3>Interested in partnering with us?</h3>
+      <p>Connect with our management and sales representatives for wholesale accounts and institutional purchasing.</p>
+      <div class="cta-btns">
+        <a href="/wholesale" class="btn btn-primary">Wholesale Inquiries</a>
+        <a href="/mgt" class="btn btn-outline">Meet Management</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .about-hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .lead-paragraph {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #2c2c2c;
+    margin-bottom: 2rem;
+  }
+
+  .about-highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    background-color: var(--primary-light-pink);
+    border: 1px solid rgba(194, 0, 108, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .highlight-stat {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-dark-pink);
+  }
+
+  .highlight-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .about-image-wrapper {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .about-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 550px;
+  }
+
+  .image-caption {
+    background-color: #f3f4f6;
+    font-size: 0.85rem;
+    color: #666;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+
+  .about-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .details-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 2rem;
+    transition: transform 0.2s;
+  }
+
+  .details-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-pink);
+  }
+
+  .details-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+  }
+
+  .details-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .contact-cta-box {
+    background: #fafafa;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius-sm);
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .contact-cta-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-cta-box p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .about-highlights {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .about-details-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about-highlights {
+      grid-template-columns: 1fr;
+    }
+    .lead-paragraph {
+      font-size: 1.1rem;
+    }
+  }
+</style>

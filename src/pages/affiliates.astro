@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Affiliate Program - Flamingo"
+  description="Flamingo Tissue distributor and affiliate partner programs for retail, B2B, and hospitality supply."
+>
+  <div class="container page-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="breadcrumb-separator">/</li>
+      <li class="breadcrumb-current" aria-current="page">Affiliates</li>
+    </nav>
+
+    <article class="content-article">
+      <h1 class="page-title">Affiliate &amp; Distributor Program</h1>
+      <p class="lead-text">
+        Join the Flamingo Paper Products network of regional distributors, commercial supply brokers, and retail affiliate partners.
+      </p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>Direct Mill Pricing</h3>
+          <p>Access high-margin wholesale pricing on double-ply bathroom tissue directly from the manufacturer.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Protected Regional Territories</h3>
+          <p>Qualified commercial distributors receive dedicated territory support and direct lead routing.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Reliable West Coast Fulfillment</h3>
+          <p>Consistent inventory availability and rapid freight dispatch from City of Industry, California.</p>
+        </div>
+      </div>
+
+      <div class="apply-box">
+        <h2>Become a Registered Partner</h2>
+        <p>To register your organization as an approved distributor or affiliate representative, contact our sales desk:</p>
+        <a href="mailto:support@flamingotissue.com?subject=Affiliate%20/%20Distributor%20Application" class="btn btn-primary">
+          Apply: support@flamingotissue.com
+        </a>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .content-article {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 3rem;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 2rem;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .benefit-card {
+    background-color: #fafafa;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+  }
+
+  .benefit-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .apply-box {
+    background: var(--primary-light-pink);
+    border: 1px solid rgba(194,0,108,0.2);
+    border-radius: var(--radius-sm);
+    padding: 2.25rem;
+    text-align: center;
+  }
+
+  .apply-box h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .apply-box p {
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+  }
+
+  @media (max-width: 768px) {
+    .content-article {
+      padding: 1.5rem;
+    }
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

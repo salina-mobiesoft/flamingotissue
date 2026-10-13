@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page Not Found (404) - Flamingo"
+  description="The requested page could not be found. Explore Flamingo Bathroom Tissue products or return to the homepage."
+>
+  <div class="container page-container">
+    <div class="error-wrapper">
+      <span class="error-code">404</span>
+      <h1 class="error-title">Page Not Found</h1>
+      <p class="error-desc">
+        We're sorry, the page you are looking for may have been moved, renamed, or is temporarily unavailable.
+      </p>
+
+      <div class="action-buttons">
+        <a href="/" class="btn btn-primary">
+          Return to Homepage
+        </a>
+        <a href="/products" class="btn btn-outline">
+          View Products
+        </a>
+        <a href="/contact-us" class="btn btn-outline">
+          Contact Customer Service
+        </a>
+      </div>
+
+      <div class="popular-links">
+        <h3>Popular Destinations</h3>
+        <div class="links-row">
+          <a href="/about">About Flamingo</a>
+          <span>&bull;</span>
+          <a href="/wholesale">Wholesale</a>
+          <span>&bull;</span>
+          <a href="/mgt">Management</a>
+          <span>&bull;</span>
+          <a href="/faqs">FAQs</a>
+          <span>&bull;</span>
+          <a href="/sitemap">Site Map</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding: 4rem 1.5rem;
+  }
+
+  .error-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 3.5rem 2rem;
+  }
+
+  .error-code {
+    display: inline-block;
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--primary-pink);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .error-title {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+  }
+
+  .error-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .popular-links {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .popular-links h3 {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+  }
+
+  .links-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+  }
+
+  .links-row a {
+    color: var(--primary-dark-pink);
+    font-weight: 600;
+  }
+
+  .links-row a:hover {
+    text-decoration: underline;
+  }
+
+  .links-row span {
+    color: #ccc;
+  }
+</style>

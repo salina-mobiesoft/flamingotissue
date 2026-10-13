@@ -1,0 +1,271 @@
+---
+const slides = [
+  {
+    image: "/flamingo-tissue-1-1140x380-500h.jpg",
+    alt: "Flamingo Tissue - Ecologically Advanced Soft & Strong Bathroom Tissue"
+  },
+  {
+    image: "/flamingo-tissue-2-1140x380-500h.jpg",
+    alt: "Flamingo Tissue - Double Layered Premium Bathroom Tissue"
+  },
+  {
+    image: "/flamingo-tissue-4-1140x380-500h.jpg",
+    alt: "Flamingo Tissue - 12, 24, and 48 Super and Plus Rolls"
+  },
+  {
+    image: "/flamingo-tissue-5-1140x380-500h.jpg",
+    alt: "Flamingo Tissue - Serving Families & Businesses for Nearly 50 Years"
+  }
+];
+---
+
+<div class="hero-slider-wrapper container" aria-label="Featured Promotions Carousel">
+  <div class="slider-container" id="hero-slider" role="region" aria-roledescription="carousel">
+    <div class="slides-track" id="slides-track">
+      {slides.map((slide, index) => (
+        <div
+          class:list={["slide-item", { active: index === 0 }]}
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`Slide ${index + 1} of ${slides.length}`}
+          data-slide-index={index}
+        >
+          <img
+            src={slide.image}
+            alt={slide.alt}
+            width="1140"
+            height="380"
+            class="slide-img"
+            loading={index === 0 ? "eager" : "lazy"}
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Controls -->
+    <button
+      class="slider-btn prev-btn"
+      id="slider-prev"
+      aria-label="Previous Slide"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button
+      class="slider-btn next-btn"
+      id="slider-next"
+      aria-label="Next Slide"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Indicators -->
+    <div class="slider-indicators" id="slider-indicators" role="tablist" aria-label="Slider Indicators">
+      {slides.map((_, index) => (
+        <button
+          class:list={["indicator-dot", { active: index === 0 }]}
+          role="tab"
+          aria-selected={index === 0 ? "true" : "false"}
+          aria-label={`Go to slide ${index + 1}`}
+          data-index={index}
+        ></button>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-slider-wrapper {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .slider-container {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 1140 / 380;
+    max-height: 480px;
+  }
+
+  .slides-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  }
+
+  .slide-item.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Navigation Buttons */
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 97, 197, 0.85);
+    color: #ffffff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .slider-btn:hover {
+    background-color: var(--primary-dark-pink);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  .prev-btn {
+    left: 1rem;
+  }
+
+  .next-btn {
+    right: 1rem;
+  }
+
+  /* Indicators */
+  .slider-indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 0.35rem 0.65rem;
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+  }
+
+  .indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+  }
+
+  .indicator-dot.active {
+    background-color: var(--primary-pink);
+    transform: scale(1.25);
+  }
+
+  @media (max-width: 768px) {
+    .slider-btn {
+      width: 36px;
+      height: 36px;
+    }
+    .prev-btn {
+      left: 0.5rem;
+    }
+    .next-btn {
+      right: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  function initHeroSlider() {
+    const slider = document.getElementById('hero-slider');
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.slide-item');
+    const dots = slider.querySelectorAll('.indicator-dot');
+    const prevBtn = document.getElementById('slider-prev');
+    const nextBtn = document.getElementById('slider-next');
+
+    let currentIndex = 0;
+    let timer: number | null = null;
+    const total = slides.length;
+
+    function goToSlide(index: number) {
+      slides[currentIndex].classList.remove('active');
+      dots[currentIndex].classList.remove('active');
+      dots[currentIndex].setAttribute('aria-selected', 'false');
+
+      currentIndex = (index + total) % total;
+
+      slides[currentIndex].classList.add('active');
+      dots[currentIndex].classList.add('active');
+      dots[currentIndex].setAttribute('aria-selected', 'true');
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      timer = window.setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoPlay() {
+      if (timer !== null) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startAutoPlay(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startAutoPlay(); });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        const target = e.currentTarget as HTMLElement;
+        const idx = parseInt(target.getAttribute('data-index') || '0', 10);
+        goToSlide(idx);
+        startAutoPlay();
+      });
+    });
+
+    slider.addEventListener('mouseenter', stopAutoPlay);
+    slider.addEventListener('mouseleave', startAutoPlay);
+    slider.addEventListener('focusin', stopAutoPlay);
+    slider.addEventListener('focusout', startAutoPlay);
+
+    startAutoPlay();
+  }
+
+  document.addEventListener('DOMContentLoaded', initHeroSlider);
+</script>

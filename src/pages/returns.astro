@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Product Returns - Flamingo"
+  description="Flamingo Tissue returns, replacement policy, and Return Merchandise Authorization (RMA) procedures."
+>
+  <div class="container page-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="breadcrumb-separator">/</li>
+      <li class="breadcrumb-current" aria-current="page">Product Returns</li>
+    </nav>
+
+    <article class="content-article">
+      <h1 class="page-title">Product Returns &amp; Claims</h1>
+      <p class="lead-text">
+        At Flamingo Paper Products, we take immense pride in the consistent quality of our double-ply bathroom tissue. If you encounter any issue with your shipment, our customer service team is ready to help.
+      </p>
+
+      <section class="policy-section">
+        <h2>Return Policy Guidelines</h2>
+        <ul class="policy-bullets">
+          <li><strong>Defective Goods or Quality Concerns:</strong> If any shipment fails to meet specifications, contact us within 14 calendar days of delivery for immediate inspection and replacement or credit.</li>
+          <li><strong>Transit Damage or Shortage:</strong> Damaged cartons or pallet shortages must be marked on the carrier's Delivery Receipt at the time of delivery. Claims should be submitted to our team within 5 business days.</li>
+          <li><strong>Return Authorization (RMA):</strong> All returns require a prior Return Merchandise Authorization (RMA) number issued by Flamingo customer service. Unauthorized returns cannot be accepted at our receiving docks.</li>
+        </ul>
+      </section>
+
+      <!-- Return Request Composer (No Database Needed) -->
+      <div class="rma-request-card">
+        <h2>Request a Return Authorization (RMA)</h2>
+        <p>Complete the form below to initiate an RMA request directly to <a href="mailto:support@flamingotissue.com">support@flamingotissue.com</a>.</p>
+
+        <form id="returns-form" class="returns-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="r-name">Contact Name *</label>
+              <input type="text" id="r-name" required placeholder="John Smith" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="r-order">Order Number / PO Number *</label>
+              <input type="text" id="r-order" required placeholder="PO-12345" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="r-email">Email Address *</label>
+              <input type="email" id="r-email" required placeholder="john@example.com" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="r-reason">Reason for Return *</label>
+              <select id="r-reason" class="form-input">
+                <option value="Damaged in Transit">Damaged in Transit</option>
+                <option value="Incorrect Product Received">Incorrect Product Received</option>
+                <option value="Product Defect / Quality Issue">Product Defect / Quality Issue</option>
+                <option value="Order Cancellation / Other">Order Cancellation / Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="r-details">Details &amp; Product Description *</label>
+            <textarea id="r-details" rows="4" required placeholder="Please provide carton counts, lot numbers, or damage description..." class="form-input"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn">
+            Submit RMA Request to support@flamingotissue.com
+          </button>
+        </form>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .content-article {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 3rem;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 2rem;
+  }
+
+  .policy-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .policy-section h2 {
+    font-size: 1.35rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+  }
+
+  .policy-bullets {
+    list-style: disc;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .policy-bullets li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4b5563;
+  }
+
+  .rma-request-card {
+    background-color: #fafafa;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius-sm);
+    padding: 2.25rem;
+    margin-top: 2rem;
+  }
+
+  .rma-request-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .rma-request-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .rma-request-card a {
+    color: var(--primary-dark-pink);
+    font-weight: 600;
+  }
+
+  .returns-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius-sm);
+    font-size: 0.98rem;
+    background-color: #ffffff;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(255, 97, 197, 0.2);
+  }
+
+  .submit-btn {
+    align-self: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .content-article {
+      padding: 1.5rem;
+    }
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    .submit-btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  function setupReturnsForm() {
+    const form = document.getElementById('returns-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('r-name') as HTMLInputElement)?.value || '';
+      const order = (document.getElementById('r-order') as HTMLInputElement)?.value || '';
+      const email = (document.getElementById('r-email') as HTMLInputElement)?.value || '';
+      const reason = (document.getElementById('r-reason') as HTMLSelectElement)?.value || '';
+      const details = (document.getElementById('r-details') as HTMLTextAreaElement)?.value || '';
+
+      const subject = encodeURIComponent(`[RMA Request] Order: ${order} - ${name}`);
+      const body = encodeURIComponent(
+`Flamingo Tissue Customer Support,
+
+I am requesting a Return Merchandise Authorization (RMA) for the following:
+
+Name: ${name}
+Order/PO Number: ${order}
+Email: ${email}
+Reason for Return: ${reason}
+
+Details:
+${details}
+
+Thank you,
+${name}`
+      );
+
+      window.location.href = `mailto:support@flamingotissue.com?subject=${subject}&body=${body}`;
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupReturnsForm);
+</script>

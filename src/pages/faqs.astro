@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqCategories = [
+  {
+    category: "Septic & Sewer Safety",
+    items: [
+      {
+        q: "Is Flamingo Toilet paper septic/sewer safe?",
+        a: "All toilet paper products manufactured by Flamingo Paper Products, Inc. are acceptable for use in standard septic and sewer systems."
+      },
+      {
+        q: "Is Flamingo Bathroom Tissue septic safe toilet paper?",
+        a: "Flamingo Paper Products, Inc. toilet paper is acceptable for use in standard septic and sewer systems."
+      },
+      {
+        q: "What does septic safe toilet paper mean?",
+        a: "Septic safe toilet paper means that it's able to break down and dissolve easily so it's safe for septic systems and standard sewers."
+      }
+    ]
+  },
+  {
+    category: "Ply Related Questions",
+    items: [
+      {
+        q: "What is the difference between 1 ply and 2 ply toilet paper?",
+        a: "The difference between 1 ply toilet paper and 2 ply toilet paper is the amount of paper layers. 1 ply toilet paper consists of one paper layer while 2 ply toilet paper is made with 2 layers of paper."
+      },
+      {
+        q: "Does Flamingo Bathroom Tissue have a single ply toilet paper?",
+        a: "No, Flamingo Paper Products, Inc. does not offer single ply toilet paper. All Flamingo toilet paper is 2 ply. Our 2 ply toilet paper provides 2 layers of softness, absorbency and strength."
+      }
+    ]
+  },
+  {
+    category: "Roll Types & Specifications",
+    items: [
+      {
+        q: "What is the difference between Flamingo Super Rolls and Plus Rolls?",
+        a: "Flamingo Super Rolls feature 750 sheets per roll (50% more sheets than our regular Plus Rolls), making them ideal for long-lasting convenience. Flamingo Plus Rolls feature 550 sheets per roll, delivering 10% more sheets than our leading competitors."
+      },
+      {
+        q: "What pack sizes are available?",
+        a: "Both Flamingo Ultra Cush Super Rolls and Plus Rolls are manufactured in 12-roll, 24-roll, and 48-roll packs for retail and wholesale distribution."
+      },
+      {
+        q: "How can I place a wholesale or corporate bulk order?",
+        a: "Wholesale buyers, hospitality managers, and distributors can contact our sales team at sales@flamingotissue.com or call 888-580-8091 for customized quotes and pallet shipping."
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="FAQS - Flamingo"
+  description="Frequently Asked Questions about Flamingo Bathroom Tissue: septic and sewer safety, 2-ply construction, sheet counts, and roll specifications."
+>
+  <div class="container page-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="breadcrumb-separator">/</li>
+      <li class="breadcrumb-current" aria-current="page">FAQs</li>
+    </nav>
+
+    <div class="faqs-hero">
+      <h1 class="page-title">FAQs</h1>
+      <p class="subtitle">Frequently Asked Questions</p>
+      <p class="lead-text">
+        Find answers to commonly asked questions about our toilet paper plies, septic safety, materials, and ordering.
+      </p>
+    </div>
+
+    <div class="faqs-content">
+      {faqCategories.map((cat) => (
+        <section class="faq-group">
+          <h2 class="faq-group-title">{cat.category}</h2>
+          <div class="accordion-list">
+            {cat.items.map((item, idx) => (
+              <details class="faq-item" open={idx === 0}>
+                <summary class="faq-question">
+                  <span>{item.q}</span>
+                  <svg class="chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </summary>
+                <div class="faq-answer">
+                  <p>{item.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- Still have questions box -->
+    <div class="more-questions-box">
+      <h3>Have another question?</h3>
+      <p>Our customer service team is here to assist you.</p>
+      <div class="action-btns">
+        <a href="/contact-us" class="btn btn-primary">Contact Us</a>
+        <a href="mailto:support@flamingotissue.com" class="btn btn-outline">Email Support: support@flamingotissue.com</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .faqs-hero {
+    margin-bottom: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--primary-dark-pink);
+    margin-top: -0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .faqs-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .faq-group-title {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-pink);
+  }
+
+  .accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .faq-item:hover {
+    border-color: var(--primary-pink);
+  }
+
+  .faq-item[open] {
+    border-color: var(--primary-dark-pink);
+  }
+
+  .faq-question {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    user-select: none;
+    background-color: #fafafa;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    background-color: var(--primary-light-pink);
+    color: var(--primary-dark-pink);
+  }
+
+  .chevron-icon {
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    color: var(--primary-dark-pink);
+  }
+
+  .faq-item[open] .chevron-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 1.25rem 1.5rem;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .more-questions-box {
+    background: #fafafa;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius-sm);
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .more-questions-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .more-questions-box p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .action-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+</style>

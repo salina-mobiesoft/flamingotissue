@@ -1,0 +1,294 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products } from '../data/products';
+---
+
+<Layout
+  title="Products - Flamingo"
+  description="Explore the complete line of Flamingo Ultra Cush Double-Ply Bathroom Tissue. 12, 24, and 48 Super Rolls (750 sheets) and Plus Rolls (550 sheets)."
+>
+  <div class="container page-container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="breadcrumb-separator">/</li>
+      <li class="breadcrumb-current" aria-current="page">Products</li>
+    </nav>
+
+    <div class="products-hero">
+      <h1 class="page-title">Products</h1>
+      <p class="lead-text">
+        Our premium DOUBLE-PLY bathroom tissue is engineered with ecologically advanced technology. Soft, strong, highly absorbent, and 100% septic safe.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-bar">
+        <button class="filter-tab active" data-filter="all">All Products (6)</button>
+        <button class="filter-tab" data-filter="Super Rolls">Super Rolls &bull; 750 Sheets</button>
+        <button class="filter-tab" data-filter="Plus Rolls">Plus Rolls &bull; 550 Sheets</button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="products-grid" id="catalog-grid">
+      {products.map((product) => (
+        <div class="product-item" data-category={product.series}>
+          <ProductCard product={product} />
+        </div>
+      ))}
+    </div>
+
+    <!-- Technical Comparison Table -->
+    <section class="specs-section">
+      <h2 class="section-title">Product Specifications &amp; Comparison</h2>
+      <div class="table-responsive">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Series</th>
+              <th>Roll Count</th>
+              <th>Sheets / Roll</th>
+              <th>Ply</th>
+              <th>Septic Safe</th>
+              <th>Advantage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Flamingo Ultra Cush 12 Super Rolls</strong></td>
+              <td>Super Rolls</td>
+              <td>12 Rolls</td>
+              <td>750 Sheets</td>
+              <td>2-Ply</td>
+              <td>Yes</td>
+              <td>50% more sheets than Plus Rolls</td>
+            </tr>
+            <tr>
+              <td><strong>Flamingo Ultra Cush 24 Super Rolls</strong></td>
+              <td>Super Rolls</td>
+              <td>24 Rolls</td>
+              <td>750 Sheets</td>
+              <td>2-Ply</td>
+              <td>Yes</td>
+              <td>50% more sheets than Plus Rolls</td>
+            </tr>
+            <tr>
+              <td><strong>Flamingo Ultra Cush 48 Super Rolls</strong></td>
+              <td>Super Rolls</td>
+              <td>48 Rolls</td>
+              <td>750 Sheets</td>
+              <td>2-Ply</td>
+              <td>Yes</td>
+              <td>50% more sheets than Plus Rolls</td>
+            </tr>
+            <tr>
+              <td><strong>Flamingo Ultra Cush 12 Plus Rolls</strong></td>
+              <td>Plus Rolls</td>
+              <td>12 Rolls</td>
+              <td>550 Sheets</td>
+              <td>2-Ply</td>
+              <td>Yes</td>
+              <td>10% more sheets than competitors</td>
+            </tr>
+            <tr>
+              <td><strong>Flamingo Ultra Cush 24 Plus Rolls</strong></td>
+              <td>Plus Rolls</td>
+              <td>24 Rolls</td>
+              <td>550 Sheets</td>
+              <td>2-Ply</td>
+              <td>Yes</td>
+              <td>10% more sheets than competitors</td>
+            </tr>
+            <tr>
+              <td><strong>Flamingo Ultra Cush 48 Plus Rolls</strong></td>
+              <td>Plus Rolls</td>
+              <td>48 Rolls</td>
+              <td>550 Sheets</td>
+              <td>2-Ply</td>
+              <td>Yes</td>
+              <td>10% more sheets than competitors</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Wholesale Bulk CTA -->
+    <div class="wholesale-inquiry-box">
+      <h2>Looking for Bulk Pallet Orders or Commercial Delivery?</h2>
+      <p>
+        Flamingo Paper Products services large commercial accounts, hotel chains, and retail grocery stores nationwide.
+      </p>
+      <div class="inquiry-actions">
+        <a href="mailto:support@flamingotissue.com?subject=Wholesale%20Product%20Inquiry" class="btn btn-primary">
+          Order Inquiry: support@flamingotissue.com
+        </a>
+        <a href="/wholesale" class="btn btn-outline">
+          View Wholesale Programs
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .products-hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .filter-bar {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-tab {
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .filter-tab:hover {
+    border-color: var(--primary-pink);
+    color: var(--primary-dark-pink);
+  }
+
+  .filter-tab.active {
+    background-color: var(--primary-pink);
+    color: #ffffff;
+    border-color: var(--border-pink);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .product-item.hidden {
+    display: none;
+  }
+
+  /* Specs Table */
+  .specs-section {
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+  }
+
+  .specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.92rem;
+  }
+
+  .specs-table th {
+    background-color: var(--primary-light-pink);
+    color: var(--primary-dark-pink);
+    padding: 1rem 1.25rem;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(194, 0, 108, 0.2);
+  }
+
+  .specs-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    color: #333;
+  }
+
+  .specs-table tr:hover td {
+    background-color: #fdf2f9;
+  }
+
+  /* Wholesale Box */
+  .wholesale-inquiry-box {
+    background: #fafafa;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius-sm);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .wholesale-inquiry-box h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .wholesale-inquiry-box p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto 2rem;
+  }
+
+  .inquiry-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 650px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  function setupFilters() {
+    const tabs = document.querySelectorAll('.filter-tab');
+    const items = document.querySelectorAll('.product-item');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.getAttribute('data-filter');
+
+        items.forEach((item) => {
+          const cat = item.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupFilters);
+</script>

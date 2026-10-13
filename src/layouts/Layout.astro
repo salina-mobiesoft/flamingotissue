@@ -1,0 +1,91 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = "Flamingo - Premium Bathroom Tissue & Paper Products",
+  description = "For nearly 50 years, Flamingo Paper Products have designed and manufactured the best bathroom tissue on the market. Double layered, soft, strong, highly absorbent and septic safe.",
+  image = "/flamingo-tissue-1-1140x380-500h.jpg",
+  canonicalUrl = Astro.url.href
+} = Astro.props;
+
+const siteName = "Flamingo Paper Products, Inc.";
+const fullTitle = title.includes("Flamingo") ? title : `${title} - Flamingo`;
+const ogImage = image.startsWith("http") ? image : `https://flamingotissue.com${image}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/flamingo-tissue1.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/flamingo-tissue1.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/flamingo-tissue1.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Flamingo Paper Products, Inc.",
+      "url": "https://flamingotissue.com",
+      "logo": "https://flamingotissue.com/flamingo-tissue-1500h.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-888-580-8091",
+        "contactType": "customer service",
+        "email": "support@flamingotissue.com",
+        "areaServed": ["US", "CA"],
+        "availableLanguage": "en"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "15117 Salt Lake Avenue",
+        "addressLocality": "City of Industry",
+        "addressRegion": "CA",
+        "postalCode": "91746",
+        "addressCountry": "US"
+      }
+    })} />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <Header currentPath={Astro.url.pathname} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
