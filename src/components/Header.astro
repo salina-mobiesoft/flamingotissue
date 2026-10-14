@@ -9,7 +9,7 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Flamingo" },
   { href: "/wholesale", label: "Wholesale" },
-  { href: "/mgt", label: "Management" },
+  { href: "/management", label: "Management" },
   { href: "/faqs", label: "FAQ" },
   { href: "/products", label: "Products" },
   { href: "/contact-us", label: "Contact Us" }
@@ -19,30 +19,6 @@ const cleanPath = currentPath.replace(/\/$/, "") || "/";
 ---
 
 <header class="site-header" role="banner">
-  <div class="header-top-bar">
-    <div class="container top-bar-content">
-      <div class="top-announcement">
-        <span>Premium Soft &amp; Strong Bathroom Tissue &bull; Septic Safe</span>
-      </div>
-      <div class="top-contact-direct">
-        <a href="tel:888-580-8091" class="top-phone">
-          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-          </svg>
-          888-580-8091
-        </a>
-        <span class="divider">|</span>
-        <a href="mailto:support@flamingotissue.com" class="top-email">
-          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-          support@flamingotissue.com
-        </a>
-      </div>
-    </div>
-  </div>
-
   <div class="header-main container">
     <div class="brand-wrapper">
       <a href="/" class="brand-link" aria-label="Flamingo Tissue - Home">
@@ -171,49 +147,6 @@ const cleanPath = currentPath.replace(/\/$/, "") || "/";
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-
-  .header-top-bar {
-    background-color: #f7f7f9;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    border-bottom: 1px solid rgba(25, 24, 24, 0.06);
-    padding: 0.35rem 0;
-  }
-
-  .top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .top-announcement {
-    font-weight: 500;
-    color: #444;
-  }
-
-  .top-contact-direct {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .top-phone, .top-email {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    color: #333;
-    font-weight: 500;
-  }
-
-  .top-phone:hover, .top-email:hover {
-    color: var(--primary-dark-pink);
-  }
-
-  .divider {
-    color: #ccc;
   }
 
   .header-main {
@@ -396,12 +329,6 @@ const cleanPath = currentPath.replace(/\/$/, "") || "/";
   }
 
   @media (max-width: 768px) {
-    .top-announcement {
-      display: none;
-    }
-    .top-bar-content {
-      justify-content: center;
-    }
     .desktop-nav {
       display: none;
     }
@@ -418,9 +345,9 @@ const cleanPath = currentPath.replace(/\/$/, "") || "/";
 
 <script>
   function setupMobileMenu() {
-    const toggleBtn = document.getElementById('mobile-menu-toggle');
-    const closeBtn = document.getElementById('mobile-menu-close');
-    const drawer = document.getElementById('mobile-menu-drawer');
+    const toggleBtn = document.getElementById('mobile-menu-toggle') as HTMLButtonElement;
+    const closeBtn = document.getElementById('mobile-menu-close') as HTMLButtonElement;
+    const drawer = document.getElementById('mobile-menu-drawer') as HTMLDivElement;
 
     if (!toggleBtn || !closeBtn || !drawer) return;
 

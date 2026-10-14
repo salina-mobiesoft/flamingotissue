@@ -14,9 +14,6 @@ interface Props {
 }
 
 const { product } = Astro.props;
-const mailtoSubject = encodeURIComponent(`Wholesale Inquiry: ${product.name}`);
-const mailtoBody = encodeURIComponent(`Hello Flamingo Tissue,\n\nI would like more information or a wholesale quote for ${product.name}.\n\nQuantity needed:\nDelivery ZIP Code:\nCompany/Contact Name:\nPhone:\n\nThank you!`);
-const inquiryLink = `mailto:support@flamingotissue.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 ---
 
 <div class="product-card" id={product.id}>
@@ -52,19 +49,6 @@ const inquiryLink = `mailto:support@flamingotissue.com?subject=${mailtoSubject}&
         ))}
       </ul>
     )}
-
-    <div class="product-action">
-      <a href={inquiryLink} class="btn btn-primary inquiry-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-        Inquire / Order
-      </a>
-      <a href={`/contact-us?product=${encodeURIComponent(product.name)}`} class="btn btn-outline details-btn">
-        Contact Sales
-      </a>
-    </div>
   </div>
 </div>
 
@@ -163,7 +147,7 @@ const inquiryLink = `mailto:support@flamingotissue.com?subject=${mailtoSubject}&
     font-size: 0.92rem;
     line-height: 1.55;
     color: var(--text-muted);
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.5rem;
     text-align: left;
     flex-grow: 1;
   }
@@ -171,7 +155,7 @@ const inquiryLink = `mailto:support@flamingotissue.com?subject=${mailtoSubject}&
   .feature-bullets {
     list-style: none;
     text-align: left;
-    margin-bottom: 1.25rem;
+    margin-top: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px dashed rgba(0,0,0,0.1);
     display: flex;
@@ -190,25 +174,5 @@ const inquiryLink = `mailto:support@flamingotissue.com?subject=${mailtoSubject}&
   .check-icon {
     color: var(--primary-dark-pink);
     flex-shrink: 0;
-  }
-
-  .product-action {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-    margin-top: auto;
-  }
-
-  .inquiry-btn {
-    width: 100%;
-    padding: 0.65rem 1rem;
-    font-size: 0.95rem;
-  }
-
-  .details-btn {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
   }
 </style>

@@ -5,27 +5,19 @@ export const GET: APIRoute = () => {
     '',
     '/about',
     '/wholesale',
-    '/mgt',
     '/management',
     '/faqs',
-    '/faq',
     '/products',
     '/contact-us',
-    '/contact',
     '/specials',
-    '/legal-agg',
     '/legal-agreement',
     '/delivery-info',
-    '/delivery',
-    '/priv-pol',
     '/privacy',
     '/terms-conditions',
-    '/terms',
     '/returns',
     '/sitemap',
     '/gift-certificates',
-    '/affiliates',
-    '/account'
+    '/affiliates'
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

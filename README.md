@@ -10,7 +10,7 @@ This repository contains the complete, modern, responsive website for **Flamingo
 
 ### Key Highlights
 - **Zero Database Dependency:** Pure static architecture compiled with AstroJS. All user actions, wholesale inquiries, quote builders, and support requests link directly to client-side `mailto:support@flamingotissue.com` handlers.
-- **Faithful Restoration:** Restored all recoverable pages and historical route aliases (`/mgt` & `/management`, `/faqs` & `/faq`, `/contact-us` & `/contact`, `/delivery-info` & `/delivery`, `/priv-pol` & `/privacy`, `/terms-conditions` & `/terms`, `/legal-agg` & `/legal-agreement`).
+- **Faithful Restoration:** Restored all recoverable pages (`/management`, `/faqs`, `/contact-us`, `/delivery-info`, `/privacy`, `/terms-conditions`, `/legal-agreement`).
 - **Full SEO & Social Sharing:** Includes responsive viewport meta, canonical URLs, OpenGraph tags, Twitter Card metadata, Schema.org `Organization` JSON-LD structured data, dynamic XML sitemap (`/sitemap.xml`), and `robots.txt`.
 - **Accessibility (a11y):** Semantic HTML5 landmarks, WCAG 2.1 AA color contrast compliance, ARIA labels, skip-to-content links, and keyboard-accessible mobile drawer navigation.
 - **Untouched Resources:** The `resources/` folder was created first and preserved untouched.
@@ -96,27 +96,19 @@ FlamingoTissue/
         ├── index.astro      # Home (Hero slider, featured products, brand values)
         ├── about.astro      # About Flamingo (Story, history & factory image)
         ├── wholesale.astro  # Wholesale sales & commercial distribution programs
-        ├── mgt.astro        # Management (Bios & headshots for 8 leaders)
-        ├── management.astro # Alias route for /mgt
+        ├── management.astro # Management (Bios & headshots for 8 leaders)
         ├── faqs.astro       # Interactive FAQ accordions (Septic safety & plies)
-        ├── faq.astro        # Alias route for /faqs
         ├── products.astro   # Complete 6-product catalog & technical specs
         ├── contact-us.astro # Contact details & mailto message composer
-        ├── contact.astro    # Alias route for /contact-us
         ├── specials.astro   # Special offers & volume discount tiers
-        ├── legal-agg.astro  # Legal Statement & DMCA copyright terms
-        ├── legal-agreement.astro # Alias route for /legal-agg
+        ├── legal-agreement.astro # Legal Statement & DMCA copyright terms
         ├── delivery-info.astro   # Freight transit times & pallet logistics
-        ├── delivery.astro   # Alias route for /delivery-info
-        ├── priv-pol.astro   # Privacy policy & California resident disclosures
-        ├── privacy.astro    # Alias route for /priv-pol
-        ├── terms-conditions.astro# Terms of sale & service
-        ├── terms.astro      # Alias route for /terms-conditions
+        ├── privacy.astro    # Privacy policy & California resident disclosures
+        ├── terms-conditions.astro # Terms of sale & service
         ├── returns.astro    # Product returns policy & RMA composer
         ├── sitemap.astro    # Full HTML directory and site map
         ├── gift-certificates.astro # Commercial purchase vouchers
         ├── affiliates.astro # Regional distributor program
-        ├── account.astro    # Customer portal, order lookup & newsletter
         ├── 404.astro        # Custom 404 error page
         ├── robots.txt.ts    # Dynamic robots.txt
         └── sitemap.xml.ts   # Dynamic XML sitemap
@@ -131,20 +123,19 @@ FlamingoTissue/
 | `/` | **Home** | Hero slider with all 4 original banners, lead statement, featured products, values |
 | `/about` | **About Flamingo** | History since 1965, manufacturing facility photo, quality standards |
 | `/wholesale` | **Wholesale** | Original emails (`sales@`, `info@`, `jobs@`, `support@`), quote builder |
-| `/mgt` & `/management` | **Management** | Complete leadership biographies and photos for all 8 executives |
-| `/faqs` & `/faq` | **FAQs** | Interactive accordions for septic safety, sewer compatibility & ply specs |
+| `/management` | **Management** | Complete leadership biographies and photos for all 8 executives |
+| `/faqs` | **FAQs** | Interactive accordions for septic safety, sewer compatibility & ply specs |
 | `/products` | **Products** | 6-product catalog, Super & Plus series filter, technical specs comparison |
-| `/contact-us` & `/contact` | **Contact Us** | Facility address (City of Industry, CA), phone (888-580-8091), direct `mailto:support@flamingotissue.com` |
+| `/contact-us` | **Contact Us** | Facility address (City of Industry, CA), phone (888-580-8091), direct `mailto:support@flamingotissue.com` |
 | `/specials` | **Special Offers** | Restored special offers notice & tiered wholesale volume discount pricing |
-| `/legal-agg` & `/legal-agreement` | **Legal Agreement** | Complete legal statement, trademark notice & copyright infringement terms |
-| `/delivery-info` & `/delivery` | **Delivery Information** | Freight transit times, LTL/FTL pallet shipping, receiving inspection |
-| `/priv-pol` & `/privacy` | **Privacy Policy** | Full privacy policy, California Civil Code disclosures, cookie notices |
-| `/terms-conditions` & `/terms` | **Terms & Conditions** | Commercial terms of service, payment terms, and governing California law |
+| `/legal-agreement` | **Legal Agreement** | Complete legal statement, trademark notice & copyright infringement terms |
+| `/delivery-info`| **Delivery Information** | Freight transit times, LTL/FTL pallet shipping, receiving inspection |
+| `/privacy` | **Privacy Policy** | Full privacy policy, California Civil Code disclosures, cookie notices |
+| `/terms-conditions` | **Terms & Conditions** | Commercial terms of service, payment terms, and governing California law |
 | `/returns` | **Product Returns** | Customer return guidelines & direct RMA request composer |
 | `/sitemap` | **Site Map** | Complete HTML directory of all pages and product collections |
 | `/gift-certificates` | **Gift Certificates** | Corporate purchase vouchers & credit inquiries |
 | `/affiliates` | **Affiliates** | Regional distributor & commercial supply partner program |
-| `/account` | **My Account** | Order tracking inquiries, re-ordering & newsletter signup |
 | `/404` | **404 Page** | Friendly error recovery page |
 | `/robots.txt` & `/sitemap.xml` | **Search Engine Directives** | Full crawler indexing support |
 
